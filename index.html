@@ -43,13 +43,16 @@
 */
       addMarker({
         coords: {lat: 1.3694, lng: 103.8488},
-        iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        content: '<h1>AMK Hub</h1>'
       });  // AMK Hub
       addMarker({
-        coords: {lat: 1.4483, lng: 103.8198}
+        coords: {lat: 1.4483, lng: 103.8198},
+        content: '<h1>Sun Plaza</h1>'
       });  // Sun Plaza
       addMarker({
-        coords: {lat: 1.4304, lng: 103.8354}
+        coords: {lat: 1.4304, lng: 103.8354},
+        content: '<h1>Yishun North Point</h1>'
       });  // Yishun North Point
 
       function addMarker(props) {
@@ -62,6 +65,17 @@
         if(props.iconImage) {
           // Set icon image
           marker.setIcon(props.iconImage);
+        }
+
+        // Check for custom content
+        if(props.content) {
+          var infoWindow = new google.maps.InfoWindow({
+            content: props.content
+          })
+
+          marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+          });
         }
       }
     }
