@@ -42,7 +42,8 @@
       });
 */
       addMarker({
-        coords: {lat: 1.3694, lng: 103.8488}
+        coords: {lat: 1.3694, lng: 103.8488},
+        iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
       });  // AMK Hub
       addMarker({
         coords: {lat: 1.4483, lng: 103.8198}
@@ -55,7 +56,7 @@
         var marker = new google.maps.Marker({
           position: props.coords,
           map: map,
-          icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+          icon: props.iconImage
         });
       }
     }
