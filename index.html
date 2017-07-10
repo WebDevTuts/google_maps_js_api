@@ -55,9 +55,14 @@
       function addMarker(props) {
         var marker = new google.maps.Marker({
           position: props.coords,
-          map: map,
-          icon: props.iconImage
+          map: map
         });
+
+        // Check for custom icon
+        if(props.iconImage) {
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
       }
     }
   </script>
