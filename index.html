@@ -41,6 +41,22 @@
         infoWindow.open(map, marker);
       });
 */
+      var markers = [
+        {
+          coords: {lat: 1.3694, lng: 103.8488},
+          iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content: '<h1>AMK Hub</h1>'
+        },
+        {
+          coords: {lat: 1.4483, lng: 103.8198},
+          content: '<h1>Sun Plaza</h1>'
+        },
+        {
+          coords: {lat: 1.4304, lng: 103.8354},
+          content: '<h1>Yishun North Point</h1>'
+        }
+      ]
+
       addMarker({
         coords: {lat: 1.3694, lng: 103.8488},
         iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
